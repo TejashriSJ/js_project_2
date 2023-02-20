@@ -1,19 +1,18 @@
 
-function defaults(testObject,defaultProps){  
-   
-    if (!testObject || !(typeof testObject === 'object')){
-        return [];
-    }
-    else{
+function defaults(testObject, defaultProps) {
 
-        for(let defaultPropsKey in defaultProps){
-            
-            if ((defaultPropsKey in testObject === false)){
-            
+    if (!testObject || !(typeof testObject === 'object')) {
+        return [];
+    } else {
+
+        for (let defaultPropsKey in defaultProps) {
+
+            if ((defaultPropsKey in testObject === false)) {
+
                 testObject[defaultPropsKey] = defaultProps[defaultPropsKey];
             }
         }
-        return testObject;   
+        return testObject;
     }
 }
 module.exports = defaults;

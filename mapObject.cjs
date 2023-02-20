@@ -1,14 +1,13 @@
 
-function mapObject(testObject,cb){
-    
-    if (!testObject || !(typeof testObject === 'object')){
+function mapObject(testObject, callBackFunction) {
+
+    if (!testObject || !(typeof testObject === 'object')) {
         return [];
-    }
-    else{
-        for ( let key in testObject){
-            testObject[key] = cb(testObject[key])
+    } else {
+        for (let key in testObject) {
+            testObject[key] = callBackFunction(testObject[key]);
         }
-        return testObject
+        return testObject;
     }
-    }
-    module.exports = mapObject;
+}
+module.exports = mapObject;
